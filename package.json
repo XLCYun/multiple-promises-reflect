@@ -1,0 +1,23 @@
+{
+  "name": "multiple-promises-reflect",
+  "version": "1.0.0",
+  "description": "Tool use to wrap promise to new one that will always resolve and resolve with an object indicates the promise's status, resolved with a resolved value or rejected with an error. Multiple promises supported.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XLCYun/multiple-promises-reflect.git"
+  },
+  "keywords": [
+    "promise",
+    "reflect"
+  ],
+  "author": "XLCYun@foxmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XLCYun/multiple-promises-reflect/issues"
+  },
+  "homepage": "https://github.com/XLCYun/multiple-promises-reflect#readme"
+}
