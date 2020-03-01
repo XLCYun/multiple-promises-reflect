@@ -49,3 +49,4 @@ declare namespace MultiplePromisesReflect {
 }
 
 export = MultiplePromisesReflect.reflect
+export as namespace MultiplePromisesReflect
