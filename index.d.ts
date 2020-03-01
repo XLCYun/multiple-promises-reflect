@@ -6,22 +6,22 @@ declare namespace MultiplePromisesReflect {
     promise: Promise<ResultData>,
     index: number,
     injectReflectIndexToPromiseItSelfAsWell: boolean
-  ): PromiseReflectResult<ResultData>
+  ): Promise<PromiseReflectResult<ResultData>>
 
   export function reflect<ResultData = any>(
     promise: Promise<ResultData>,
     injectReflectIndexToPromiseItSelfAsWell?: boolean
-  ): PromiseReflectResult<ResultData>
+  ): Promise<PromiseReflectResult<ResultData>>
 
   export function reflect<ResultData = any>(
     promise: Promise<ResultData>[],
     injectReflectIndexToPromiseItSelfAsWell?: boolean
-  ): PromiseReflectResult<ResultData>[]
+  ): Promise<PromiseReflectResult<ResultData>[]>
 
   export function reflect<ResultData = any>(
     promise: Promise<ResultData> | Promise<ResultData>[],
     injectReflectIndexToPromiseItSelfAsWell?: boolean
-  ): PromiseReflectResult<ResultData> | PromiseReflectResult<ResultData>[]
+  ): Promise<PromiseReflectResult<ResultData> | PromiseReflectResult<ResultData>[]>
 
   export function isPReflectResolved<T extends PromiseReflectResult<any, any>>(res: T): res is PReflectResolved {
     return res.status === "resolved"
