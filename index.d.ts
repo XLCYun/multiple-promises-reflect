@@ -1,36 +1,28 @@
 // Type definitions for [multiple-promises-reflect]
 // Definitions by: [XLCYun@foxmail.com] <[https://github.com/XLCYun]>
 
-declare namespace MultiplePromisesReflect {
-  export function reflectOne<ResultData = any, ThrowError = Error>(
-    promise: Promise<ResultData>,
-    index: number,
-    injectReflectIndexToPromiseItSelfAsWell: boolean
-  ): Promise<PromiseReflectResult<ResultData>>
+declare function reflectOne<ResultData = any, ThrowError = Error>(
+  promise: Promise<ResultData>,
+  index: number,
+  injectReflectIndexToPromiseItSelfAsWell: boolean
+): Promise<reflect.PromiseReflectResult<ResultData>>
 
-  export function reflect<ResultData = any>(
-    promise: Promise<ResultData>,
-    injectReflectIndexToPromiseItSelfAsWell?: boolean
-  ): Promise<PromiseReflectResult<ResultData>>
+declare function reflect<ResultData = any>(
+  promise: Promise<ResultData>,
+  injectReflectIndexToPromiseItSelfAsWell?: boolean
+): Promise<reflect.PromiseReflectResult<ResultData>>
 
-  export function reflect<ResultData = any>(
-    promise: Promise<ResultData>[],
-    injectReflectIndexToPromiseItSelfAsWell?: boolean
-  ): Promise<PromiseReflectResult<ResultData>[]>
+declare function reflect<ResultData = any>(
+  promise: Promise<ResultData>[],
+  injectReflectIndexToPromiseItSelfAsWell?: boolean
+): Promise<reflect.PromiseReflectResult<ResultData>[]>
 
-  export function reflect<ResultData = any>(
-    promise: Promise<ResultData> | Promise<ResultData>[],
-    injectReflectIndexToPromiseItSelfAsWell?: boolean
-  ): Promise<PromiseReflectResult<ResultData> | PromiseReflectResult<ResultData>[]>
+declare function reflect<ResultData = any>(
+  promise: Promise<ResultData> | Promise<ResultData>[],
+  injectReflectIndexToPromiseItSelfAsWell?: boolean
+): Promise<reflect.PromiseReflectResult<ResultData> | reflect.PromiseReflectResult<ResultData>[]>
 
-  export function isPReflectResolved<T extends PromiseReflectResult<any, any>>(res: T): res is PReflectResolved {
-    return res.status === "resolved"
-  }
-
-  export function isPReflectRejected<T extends PromiseReflectResult<any, any>>(res: T): res is PReflectRejected {
-    return res.status === "rejected"
-  }
-
+declare namespace reflect {
   export interface PReflectResolved<ResultData = any> {
     data: ResultData
     status: "resolved"
@@ -48,5 +40,4 @@ declare namespace MultiplePromisesReflect {
     | PReflectRejected<RejectedObject>
 }
 
-export = MultiplePromisesReflect.reflect
-export as namespace MultiplePromisesReflect
+export = reflect
