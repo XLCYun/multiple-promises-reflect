@@ -5,22 +5,24 @@ declare function reflectOne<ResultData = any, ThrowError = Error>(
   promise: Promise<ResultData>,
   index: number,
   injectReflectIndexToPromiseItSelfAsWell: boolean
-): Promise<reflect.PromiseReflectResult<ResultData>>
+): Promise<reflect.PromiseReflectResult<ResultData, ThrowError>>
 
-declare function reflect<ResultData = any>(
+declare function reflect<ResultData = any, RejectedObject = Error>(
   promise: Promise<ResultData>,
   injectReflectIndexToPromiseItSelfAsWell?: boolean
-): Promise<reflect.PromiseReflectResult<ResultData>>
+): Promise<reflect.PromiseReflectResult<ResultData, RejectedObject>>
 
-declare function reflect<ResultData = any>(
+declare function reflect<ResultData = any, RejectedObject = Error>(
   promise: Promise<ResultData>[],
   injectReflectIndexToPromiseItSelfAsWell?: boolean
-): Promise<reflect.PromiseReflectResult<ResultData>[]>
+): Promise<reflect.PromiseReflectResult<ResultData, RejectedObject>[]>
 
-declare function reflect<ResultData = any>(
+declare function reflect<ResultData = any, RejectedObject = Error>(
   promise: Promise<ResultData> | Promise<ResultData>[],
   injectReflectIndexToPromiseItSelfAsWell?: boolean
-): Promise<reflect.PromiseReflectResult<ResultData> | reflect.PromiseReflectResult<ResultData>[]>
+): Promise<
+  reflect.PromiseReflectResult<ResultData, RejectedObject> | reflect.PromiseReflectResult<ResultData, RejectedObject>[]
+>
 
 declare namespace reflect {
   export interface PReflectResolved<ResultData = any> {
